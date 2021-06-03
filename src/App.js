@@ -16,7 +16,7 @@ function App() {
     <div className="app-container">
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path={`${match.path}/:id`}>
+          <Route exact path={`/:id`}>
             <PokePage />
         </Route>
           {/* <Route exact path="/pokepage/:id" render={
