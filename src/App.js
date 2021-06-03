@@ -3,27 +3,19 @@
 // import PokemonThumnail from './components/PokemonThumnail';
 import React from 'react';
 import Home from './components/Home';
-import { BrowserRouter as Router, Route, Switch ,useRouteMatch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import PokePage from './components/PokePage';
 import Header from './components/Header';
 
 function App() {
-  let match = useRouteMatch();
-    
+
   return (
     <Router>
     <Header/>
     <div className="app-container">
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path={`/:id`}>
-            <PokePage />
-        </Route>
-          {/* <Route exact path="/pokepage/:id" render={
-            ({ match, location, history }) => {
-              return <PokePage />
-            }
-          } /> */}
+          <Route path="/" component={Home} />
+          <Route exact path="/pokepage/:id" component={PokePage} />
         </Switch>
     </div>
     </Router>
