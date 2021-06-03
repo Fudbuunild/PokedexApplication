@@ -14,7 +14,7 @@ function App() {
     <Header/>
     <div className="app-container">
         <Switch>
-          <Route exact path="/home" component={Home} />
+          <Route path="/" component={Home} />
           <Route exact path="/pokepage/:id" render={
             ({ match, location, history }) => {
               return <PokePage />
