@@ -7,7 +7,7 @@ const Header = () => {
         <div className="header">
             <div className="header__title">Pokemon Evolution</div>
              <div className="navigation">
-                <Link to="/">Go Home</Link>
+                <Link to="/PokedexApplication/">Go Home</Link>
              </div> 
         </div>
     )
