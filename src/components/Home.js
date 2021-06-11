@@ -3,6 +3,7 @@ import PokemonThumnail from './PokemonThumnail';
 
 function Home() {
   
+  const [searchTerm, setSearchTerm] = useState("");
   const [allPokemons, setAllPokemons] = useState([]);
   const [loadMore, setLoadMore] = useState('https://pokeapi.co/api/v2/pokemon?limit=20');
   
@@ -34,8 +35,15 @@ function Home() {
   return (
     <div className="app-container">
     <div className="pokemon-container">
+    <input class="search__pokemon" placeholder="Write Type" type="text" onChange={e => {setSearchTerm(e.target.value)}} />
       <div className="all-container">
-        {allPokemons.map( (pokemonStats, index) => 
+        {allPokemons.filter((pokemonStats) => {
+          if (searchTerm == "") {
+            return pokemonStats
+          } else if (pokemonStats.types[0].type.name.toLowerCase().includes(searchTerm)) {
+            return pokemonStats
+          }
+        }).map( (pokemonStats, index) => 
           <PokemonThumnail
             key={index}
             id={pokemonStats.id}

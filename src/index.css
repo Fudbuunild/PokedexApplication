@@ -175,3 +175,9 @@ h3 {
   justify-content: space-around;
   align-items: center;
 }
+
+.search__pokemon {
+  padding: 5px;
+  margin: 20px;
+  width: 40%;
+}
