@@ -19,7 +19,7 @@ const PokePage = (props) => {
             {
             data && 
             <div>
-                <div><img src={data.sprites.other.dream_world.front_default} alt="" /></div>
+                <div><img class="pokeimg" src={data.sprites.other.dream_world.front_default} alt="" /></div>
                 <div>id: {data.id}</div>
                 <div>Name: {data.name}</div>
                 <div>Type: {data.types[0].type.name}</div>
